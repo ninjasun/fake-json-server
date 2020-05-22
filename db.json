@@ -1,0 +1,934 @@
+{
+    "meta": {
+        "blueprint_name": "(3) COMPANIES",
+        "blueprint_type": "resource",
+        "version": 0,
+        "is_valid": true
+    },
+    "data": {
+        "shape": [
+            {
+                "name": "id",
+                "field": "id",
+                "section": "special",
+                "label": null,
+                "form_control_type": "none",
+                "formatter": "none",
+                "read_only": true,
+                "relative_json_path": "$.",
+                "debug_data_seq": "1.1"
+            },
+            {
+                "name": "natural_key",
+                "field": "attributes",
+                "section": "special",
+                "label": null,
+                "form_control_type": "none",
+                "formatter": "none",
+                "form_width": "12",
+                "label_width": "12",
+                "read_only": true,
+                "is_in_table": true,
+                "relative_json_path": "$.attributes",
+                "debug_data_seq": "1.2"
+            },
+            {
+                "name": "entity",
+                "field": "attributes",
+                "section": "special",
+                "form_control_type": "none",
+                "formatter": "none",
+                "form_width": "12",
+                "label_width": "12",
+                "read_only": true,
+                "is_mandatory": true,
+                "default_value": "company",
+                "relative_json_path": "$.attributes",
+                "debug_data_seq": "1.3"
+            },
+            {
+                "name": "type",
+                "field": "attributes",
+                "section": "special",
+                "label": "Type",
+                "form_control_type": "select_single",
+                "formatter": "select_single",
+                "form_width": "12",
+                "label_width": "12",
+                "is_mandatory": true,
+                "is_filter": true,
+                "is_in_table": true,
+                "appears_always": true,
+                "allowed_values": [
+                    {
+                        "value": "other",
+                        "label": "Other"
+                    },
+                    {
+                        "value": "customer",
+                        "label": "Customer"
+                    },
+                    {
+                        "value": "supplier",
+                        "label": "Supplier"
+                    },
+                    {
+                        "value": "agency",
+                        "label": "Agency"
+                    },
+                    {
+                        "value": "EPC",
+                        "label": "EPC"
+                    },
+                    {
+                        "value": "consultant",
+                        "label": "Consultant"
+                    },
+                    {
+                        "value": "inspector",
+                        "label": "Inspector"
+                    },
+                    {
+                        "value": "laboratory",
+                        "label": "Laboratory"
+                    }
+                ],
+                "default_value": "other",
+                "relative_json_path": "$.attributes",
+                "list_allowed_values": "other",
+                "debug_data_seq": "1.4"
+            },
+            {
+                "name": "status",
+                "field": "attributes",
+                "section": "special",
+                "label": "Status",
+                "form_control_type": "select_single",
+                "formatter": "select_single",
+                "form_width": "12",
+                "label_width": "12",
+                "read_only": true,
+                "is_mandatory": true,
+                "is_filter": true,
+                "is_in_table": true,
+                "appears_always": true,
+                "allowed_values": [
+                    {
+                        "value": "draft",
+                        "label": "Draft"
+                    },
+                    {
+                        "value": "active",
+                        "label": "Active"
+                    },
+                    {
+                        "value": "on_hold",
+                        "label": "On hold"
+                    }
+                ],
+                "default_value": "draft",
+                "relative_json_path": "$.attributes",
+                "list_allowed_values": "draft",
+                "debug_data_seq": "1.5"
+            },
+            {
+                "name": "short_name",
+                "field": "attributes",
+                "section": "form",
+                "label": "Company short name",
+                "form_control_type": "text",
+                "formatter": "text",
+                "placeholder": "Company short name or nickname",
+                "form_width": "12",
+                "label_width": "12",
+                "sequence_order": "10",
+                "is_target_attribute": true,
+                "is_in_table": true,
+                "appears_always": true,
+                "relative_json_path": "$.attributes",
+                "debug_data_seq": "1.6"
+            },
+            {
+                "name": "business_name",
+                "field": "attributes",
+                "section": "form",
+                "label": "Company business name",
+                "form_control_type": "text",
+                "formatter": "text",
+                "placeholder": "Company business name",
+                "form_width": "12",
+                "label_width": "12",
+                "is_mandatory": true,
+                "sequence_order": "20",
+                "is_in_table": true,
+                "appears_always": true,
+                "relative_json_path": "$.attributes",
+                "debug_data_seq": "1.7"
+            },
+            {
+                "name": "nation",
+                "field": "attributes",
+                "section": "form",
+                "label": "Nation",
+                "form_control_type": "text",
+                "formatter": "text",
+                "form_width": "12",
+                "label_width": "12",
+                "sequence_order": "30",
+                "is_target_attribute": true,
+                "is_in_table": true,
+                "relative_json_path": "$.attributes",
+                "debug_data_seq": "1.8"
+            },
+            {
+                "name": "city",
+                "field": "attributes",
+                "section": "form",
+                "label": "City",
+                "form_control_type": "text",
+                "formatter": "text",
+                "form_width": "12",
+                "label_width": "12",
+                "sequence_order": "40",
+                "is_target_attribute": true,
+                "is_in_table": true,
+                "relative_json_path": "$.attributes",
+                "debug_data_seq": "1.9"
+            },
+            {
+                "name": "address",
+                "field": "attributes",
+                "section": "form",
+                "label": "Address",
+                "form_control_type": "text",
+                "formatter": "text",
+                "form_width": "12",
+                "label_width": "12",
+                "sequence_order": "50",
+                "is_target_attribute": true,
+                "is_in_table": true,
+                "relative_json_path": "$.attributes",
+                "debug_data_seq": "1.10"
+            },
+            {
+                "name": "coords_latitude",
+                "field": "attributes",
+                "section": "form",
+                "label": "Latitude",
+                "form_control_type": "text",
+                "formatter": "text",
+                "placeholder": "Latitude coordinates",
+                "form_width": "12",
+                "label_width": "12",
+                "sequence_order": "60",
+                "is_target_attribute": true,
+                "is_in_table": true,
+                "relative_json_path": "$.attributes",
+                "debug_data_seq": "1.11"
+            },
+            {
+                "name": "coords_longitude",
+                "field": "attributes",
+                "section": "form",
+                "label": "Longitude",
+                "form_control_type": "text",
+                "formatter": "text",
+                "placeholder": "Longitude coordinates",
+                "form_width": "12",
+                "label_width": "12",
+                "sequence_order": "70",
+                "is_target_attribute": true,
+                "is_in_table": true,
+                "relative_json_path": "$.attributes",
+                "debug_data_seq": "1.12"
+            },
+            {
+                "name": "website",
+                "field": "attributes",
+                "section": "form",
+                "label": "Website",
+                "form_control_type": "text",
+                "formatter": "text",
+                "form_width": "12",
+                "label_width": "12",
+                "sequence_order": "80",
+                "is_target_attribute": true,
+                "is_in_table": true,
+                "relative_json_path": "$.attributes",
+                "debug_data_seq": "1.13"
+            },
+            {
+                "name": "main_email",
+                "field": "attributes",
+                "section": "form",
+                "label": "Email",
+                "form_control_type": "text",
+                "formatter": "text",
+                "form_width": "12",
+                "label_width": "12",
+                "sequence_order": "90",
+                "is_target_attribute": true,
+                "is_in_table": true,
+                "relative_json_path": "$.attributes",
+                "debug_data_seq": "1.14"
+            },
+            {
+                "name": "main_telephone",
+                "field": "attributes",
+                "section": "form",
+                "label": "Telephone",
+                "form_control_type": "text",
+                "formatter": "text",
+                "form_width": "12",
+                "label_width": "12",
+                "sequence_order": "100",
+                "is_target_attribute": true,
+                "is_in_table": true,
+                "relative_json_path": "$.attributes",
+                "debug_data_seq": "1.15"
+            },
+            {
+                "name": "color",
+                "field": "attributes",
+                "section": "form",
+                "label": "Color",
+                "form_control_type": "color",
+                "formatter": "color",
+                "form_width": "12",
+                "label_width": "12",
+                "is_mandatory": true,
+                "sequence_order": "110",
+                "relative_json_path": "$.attributes",
+                "debug_data_seq": "1.16"
+            },
+            {
+                "name": "is_focal_company",
+                "field": "attributes",
+                "section": "form",
+                "form_control_type": "none",
+                "formatter": "none",
+                "read_only": true,
+                "is_mandatory": true,
+                "default_value": false,
+                "relative_json_path": "$.attributes",
+                "debug_data_seq": "1.17"
+            },
+            {
+                "name": "people_company_direct",
+                "field": "related",
+                "section": "nested",
+                "form_control_type": "people_company_direct",
+                "formatter": "people_company_direct",
+                "sequence_order": "-1",
+                "shape": [
+                    {
+                        "name": "source_entity",
+                        "field": "aspects",
+                        "section": "special",
+                        "label": null,
+                        "form_control_type": "none",
+                        "is_mandatory": true,
+                        "referred_to": "junction",
+                        "default_value": "company",
+                        "relative_json_path": "$.aspects",
+                        "debug_data_seq": "2.1"
+                    },
+                    {
+                        "name": "target_entity",
+                        "field": "aspects",
+                        "section": "special",
+                        "label": null,
+                        "form_control_type": "none",
+                        "is_mandatory": true,
+                        "referred_to": "junction",
+                        "default_value": "people",
+                        "relative_json_path": "$.aspects",
+                        "debug_data_seq": "2.2"
+                    },
+                    {
+                        "name": "junction",
+                        "field": "aspects",
+                        "section": "special",
+                        "label": null,
+                        "form_control_type": "none",
+                        "is_mandatory": true,
+                        "referred_to": "junction",
+                        "relative_json_path": "$.aspects",
+                        "debug_data_seq": "2.3"
+                    },
+                    {
+                        "name": "role",
+                        "field": "aspects",
+                        "section": "special",
+                        "label": "Role",
+                        "form_control_type": "select_single",
+                        "is_mandatory": true,
+                        "referred_to": "target",
+                        "is_filter": true,
+                        "is_in_table": true,
+                        "allowed_values": [
+                            {
+                                "value": "member",
+                                "label": "Member"
+                            }
+                        ],
+                        "default_value": "member",
+                        "relative_json_path": "$.aspects",
+                        "list_allowed_values": "member",
+                        "debug_data_seq": "2.4"
+                    },
+                    {
+                        "name": "id",
+                        "field": "id",
+                        "section": "special",
+                        "label": null,
+                        "form_control_type": "none",
+                        "formatter": "none",
+                        "read_only": true,
+                        "relative_json_path": "$.people",
+                        "debug_data_seq": "3.1"
+                    },
+                    {
+                        "name": "natural_key",
+                        "field": "attributes",
+                        "section": "special",
+                        "label": null,
+                        "form_control_type": "none",
+                        "formatter": "none",
+                        "form_width": "12",
+                        "label_width": "12",
+                        "read_only": true,
+                        "is_in_table": true,
+                        "relative_json_path": "$.people.attributes",
+                        "debug_data_seq": "3.2"
+                    },
+                    {
+                        "name": "entity",
+                        "field": "attributes",
+                        "section": "special",
+                        "form_control_type": "none",
+                        "formatter": "none",
+                        "form_width": "12",
+                        "label_width": "12",
+                        "read_only": true,
+                        "is_mandatory": true,
+                        "default_value": "people",
+                        "relative_json_path": "$.people.attributes",
+                        "debug_data_seq": "3.3"
+                    },
+                    {
+                        "name": "type",
+                        "field": "attributes",
+                        "section": "special",
+                        "label": "Type",
+                        "form_control_type": "select_single",
+                        "formatter": "select_single",
+                        "form_width": "12",
+                        "label_width": "12",
+                        "is_mandatory": true,
+                        "is_filter": true,
+                        "is_in_table": true,
+                        "appears_always": true,
+                        "allowed_values": [
+                            {
+                                "value": "main",
+                                "label": "Main"
+                            }
+                        ],
+                        "default_value": "main",
+                        "relative_json_path": "$.people.attributes",
+                        "list_allowed_values": "main",
+                        "debug_data_seq": "3.4"
+                    },
+                    {
+                        "name": "status",
+                        "field": "attributes",
+                        "section": "special",
+                        "label": "Status",
+                        "form_control_type": "select_single",
+                        "formatter": "select_single",
+                        "form_width": "12",
+                        "label_width": "12",
+                        "read_only": true,
+                        "is_mandatory": true,
+                        "is_filter": true,
+                        "is_in_table": true,
+                        "appears_always": true,
+                        "allowed_values": [
+                            {
+                                "value": "draft",
+                                "label": "Draft"
+                            },
+                            {
+                                "value": "sent_invitation",
+                                "label": "Sent invitation"
+                            },
+                            {
+                                "value": "active",
+                                "label": "Active"
+                            },
+                            {
+                                "value": "on_hold",
+                                "label": "On hold"
+                            }
+                        ],
+                        "default_value": "draft",
+                        "relative_json_path": "$.people.attributes",
+                        "list_allowed_values": "draft",
+                        "debug_data_seq": "3.5"
+                    },
+                    {
+                        "name": "sub",
+                        "field": "attributes",
+                        "section": "form",
+                        "label": null,
+                        "form_control_type": "none",
+                        "formatter": "none",
+                        "form_width": "12",
+                        "label_width": "12",
+                        "read_only": true,
+                        "relative_json_path": "$.people.attributes",
+                        "debug_data_seq": "3.6"
+                    },
+                    {
+                        "name": "first_name",
+                        "field": "attributes",
+                        "section": "form",
+                        "label": "First name",
+                        "form_control_type": "text",
+                        "formatter": "text",
+                        "placeholder": "First name",
+                        "form_width": "12",
+                        "label_width": "12",
+                        "read_only": true,
+                        "sequence_order": "10",
+                        "is_in_table": true,
+                        "appears_always": true,
+                        "relative_json_path": "$.people.attributes",
+                        "debug_data_seq": "3.7"
+                    },
+                    {
+                        "name": "family_name",
+                        "field": "attributes",
+                        "section": "form",
+                        "label": "Family name",
+                        "form_control_type": "text",
+                        "formatter": "text",
+                        "placeholder": "Family name",
+                        "form_width": "12",
+                        "label_width": "12",
+                        "read_only": true,
+                        "sequence_order": "20",
+                        "is_in_table": true,
+                        "appears_always": true,
+                        "relative_json_path": "$.people.attributes",
+                        "debug_data_seq": "3.8"
+                    },
+                    {
+                        "name": "email_address",
+                        "field": "attributes",
+                        "section": "form",
+                        "label": "Email",
+                        "form_control_type": "email",
+                        "formatter": "email",
+                        "placeholder": "Email address",
+                        "form_width": "12",
+                        "label_width": "12",
+                        "is_mandatory": true,
+                        "sequence_order": "30",
+                        "is_in_table": true,
+                        "appears_always": true,
+                        "relative_json_path": "$.people.attributes",
+                        "debug_data_seq": "3.9"
+                    },
+                    {
+                        "name": "color",
+                        "field": "attributes",
+                        "section": "form",
+                        "label": "Color",
+                        "form_control_type": "color",
+                        "formatter": "color",
+                        "form_width": "12",
+                        "label_width": "12",
+                        "read_only": true,
+                        "is_mandatory": true,
+                        "is_in_table": true,
+                        "relative_json_path": "$.people.attributes",
+                        "debug_data_seq": "3.10"
+                    },
+                    {
+                        "name": "is_internal",
+                        "field": "attributes",
+                        "section": "form",
+                        "label": "Employee",
+                        "form_control_type": "toggle",
+                        "formatter": "toggle",
+                        "form_width": "12",
+                        "label_width": "12",
+                        "read_only": true,
+                        "is_mandatory": true,
+                        "is_in_table": true,
+                        "default_value": true,
+                        "relative_json_path": "$.people.attributes",
+                        "debug_data_seq": "3.11"
+                    },
+                    {
+                        "name": "is_favorite",
+                        "field": "attributes",
+                        "section": "form",
+                        "label": "Favorite",
+                        "form_control_type": "toggle",
+                        "formatter": "star",
+                        "form_width": "12",
+                        "label_width": "12",
+                        "read_only": true,
+                        "is_mandatory": true,
+                        "sequence_order": "40",
+                        "is_in_table": true,
+                        "default_value": true,
+                        "relative_json_path": "$.people.attributes",
+                        "debug_data_seq": "3.12"
+                    }
+                ],
+                "target_entity": "people_company_direct?sequence_order",
+                "target_default_attribute": "people_company_direct?shape",
+                "relative_json_path": "$.",
+                "debug_data_seq": "1.18"
+            },
+            {
+                "name": "file_company_direct",
+                "field": "related",
+                "section": "nested",
+                "form_control_type": "file_company_direct",
+                "formatter": "file_company_direct",
+                "sequence_order": "-1",
+                "shape": [
+                    {
+                        "name": "source_entity",
+                        "field": "aspects",
+                        "section": "special",
+                        "label": null,
+                        "form_control_type": "none",
+                        "is_mandatory": true,
+                        "referred_to": "junction",
+                        "default_value": "company",
+                        "relative_json_path": "$.aspects",
+                        "debug_data_seq": "4.1"
+                    },
+                    {
+                        "name": "target_entity",
+                        "field": "aspects",
+                        "section": "special",
+                        "label": null,
+                        "form_control_type": "none",
+                        "is_mandatory": true,
+                        "referred_to": "junction",
+                        "default_value": "file",
+                        "relative_json_path": "$.aspects",
+                        "debug_data_seq": "4.2"
+                    },
+                    {
+                        "name": "junction",
+                        "field": "aspects",
+                        "section": "special",
+                        "label": null,
+                        "form_control_type": "none",
+                        "is_mandatory": true,
+                        "referred_to": "junction",
+                        "relative_json_path": "$.aspects",
+                        "debug_data_seq": "4.3"
+                    },
+                    {
+                        "name": "id",
+                        "field": "id",
+                        "section": "special",
+                        "label": null,
+                        "form_control_type": "none",
+                        "formatter": "none",
+                        "read_only": true,
+                        "relative_json_path": "$.file",
+                        "debug_data_seq": "5.1"
+                    },
+                    {
+                        "name": "natural_key",
+                        "field": "attributes",
+                        "section": "special",
+                        "label": null,
+                        "form_control_type": "none",
+                        "formatter": "none",
+                        "form_width": "12",
+                        "label_width": "12",
+                        "read_only": true,
+                        "relative_json_path": "$.file.attributes",
+                        "debug_data_seq": "5.2"
+                    },
+                    {
+                        "name": "entity",
+                        "field": "attributes",
+                        "section": "special",
+                        "form_control_type": "none",
+                        "formatter": "none",
+                        "form_width": "12",
+                        "label_width": "12",
+                        "read_only": true,
+                        "is_mandatory": true,
+                        "default_value": "file",
+                        "relative_json_path": "$.file.attributes",
+                        "debug_data_seq": "5.3"
+                    },
+                    {
+                        "name": "type",
+                        "field": "attributes",
+                        "section": "special",
+                        "label": "Type",
+                        "form_control_type": "select_single",
+                        "formatter": "select_single",
+                        "form_width": "12",
+                        "label_width": "12",
+                        "is_mandatory": true,
+                        "is_filter": true,
+                        "is_in_table": true,
+                        "appears_always": true,
+                        "allowed_values": [
+                            {
+                                "value": "main",
+                                "label": "Main"
+                            }
+                        ],
+                        "default_value": "main",
+                        "relative_json_path": "$.file.attributes",
+                        "list_allowed_values": "main",
+                        "debug_data_seq": "5.4"
+                    },
+                    {
+                        "name": "status",
+                        "field": "attributes",
+                        "section": "special",
+                        "label": "Status",
+                        "form_control_type": "select_single",
+                        "formatter": "select_single",
+                        "form_width": "12",
+                        "label_width": "12",
+                        "is_mandatory": true,
+                        "is_filter": true,
+                        "is_in_table": true,
+                        "allowed_values": [
+                            {
+                                "value": "draft",
+                                "label": "Draft"
+                            },
+                            {
+                                "value": "active",
+                                "label": "Active"
+                            }
+                        ],
+                        "default_value": "draft",
+                        "relative_json_path": "$.file.attributes",
+                        "list_allowed_values": "draft",
+                        "debug_data_seq": "5.5"
+                    },
+                    {
+                        "name": "original_file_name",
+                        "field": "attributes",
+                        "section": "form",
+                        "label": "Filename",
+                        "form_control_type": "text",
+                        "formatter": "text",
+                        "placeholder": "Filename",
+                        "form_width": "12",
+                        "label_width": "12",
+                        "is_mandatory": true,
+                        "sequence_order": "10",
+                        "is_target_attribute": true,
+                        "is_in_table": true,
+                        "appears_always": true,
+                        "relative_json_path": "$.file.attributes",
+                        "debug_data_seq": "5.6"
+                    },
+                    {
+                        "name": "mime_type",
+                        "field": "attributes",
+                        "section": "form",
+                        "label": "MIME type",
+                        "form_control_type": "text",
+                        "formatter": "text",
+                        "placeholder": "MIME type",
+                        "form_width": "12",
+                        "label_width": "12",
+                        "read_only": true,
+                        "is_mandatory": true,
+                        "is_in_table": true,
+                        "relative_json_path": "$.file.attributes",
+                        "debug_data_seq": "5.7"
+                    },
+                    {
+                        "name": "file_size",
+                        "field": "attributes",
+                        "section": "form",
+                        "label": "Size",
+                        "form_control_type": "number",
+                        "formatter": "number",
+                        "placeholder": "size",
+                        "form_width": "12",
+                        "label_width": "12",
+                        "is_mandatory": true,
+                        "sequence_order": "20",
+                        "is_in_table": true,
+                        "relative_json_path": "$.file.attributes",
+                        "debug_data_seq": "5.8"
+                    },
+                    {
+                        "name": "comment",
+                        "field": "attributes",
+                        "section": "form",
+                        "label": "Comment",
+                        "form_control_type": "text",
+                        "formatter": "text",
+                        "placeholder": "Enter a comment (optional)",
+                        "form_width": "12",
+                        "label_width": "12",
+                        "sequence_order": "30",
+                        "is_target_attribute": true,
+                        "relative_json_path": "$.file.attributes",
+                        "debug_data_seq": "5.9"
+                    }
+                ],
+                "target_entity": "file_company_direct?sequence_order",
+                "target_default_attribute": "file_company_direct?shape",
+                "relative_json_path": "$.",
+                "debug_data_seq": "1.19"
+            }
+        ],
+        "empty_content_element": {
+            "id": null,
+            "attributes": {
+                "natural_key": null,
+                "entity": "company",
+                "type": "other",
+                "status": "draft",
+                "short_name": null,
+                "business_name": null,
+                "nation": null,
+                "city": null,
+                "address": null,
+                "coords_latitude": null,
+                "coords_longitude": null,
+                "website": null,
+                "main_email": null,
+                "main_telephone": null,
+                "color": null,
+                "is_focal_company": false
+            },
+            "people_company_direct": [
+                {
+                    "aspects": {
+                        "source_entity": "company",
+                        "target_entity": "people",
+                        "junction": "people_company",
+                        "role": "member"
+                    },
+                    "people": {
+                        "id": null,
+                        "attributes": {
+                            "natural_key": null,
+                            "entity": "people",
+                            "type": "main",
+                            "status": "draft",
+                            "sub": null,
+                            "first_name": null,
+                            "family_name": null,
+                            "email_address": null,
+                            "color": null,
+                            "is_internal": true,
+                            "is_favorite": true
+                        }
+                    }
+                }
+            ],
+            "file_company_direct": [
+                {
+                    "aspects": {
+                        "source_entity": "company",
+                        "target_entity": "file",
+                        "junction": "file_company"
+                    },
+                    "file": {
+                        "id": null,
+                        "attributes": {
+                            "natural_key": null,
+                            "entity": "file",
+                            "type": "main",
+                            "status": "draft",
+                            "original_file_name": null,
+                            "mime_type": null,
+                            "file_size": null,
+                            "comment": null
+                        }
+                    }
+                }
+            ]
+        },
+        "content": [
+            {
+                "id": "c62a4cfb-a360-4709-9fbd-63885dd9ae1a",
+                "attributes": {
+                    "city": "",
+                    "type": "other",
+                    "color": "#20D991",
+                    "entity": "company",
+                    "nation": "",
+                    "status": "draft",
+                    "address": "",
+                    "website": "",
+                    "main_email": "mezzettidavide@notifyme.org",
+                    "short_name": "",
+                    "natural_key": "",
+                    "business_name": "",
+                    "main_telephone": "",
+                    "coords_latitude": "",
+                    "coords_longitude": "",
+                    "is_focal_company": true
+                },
+                "created_at": "2020-05-11T15:24:46.31974+00:00",
+                "updated_at": "2020-05-11T15:28:07.370421+00:00",
+                "cancelled_at": null,
+                "file_company_direct": [],
+                "people_company_direct": [
+                    {
+                        "people": {
+                            "id": "ffcc5f87-b324-47fa-a983-8b8afa7bb3b4",
+                            "attributes": {
+                                "sub": "c5cd04ef-28de-4e72-9a4c-58e0d7dc9a3b",
+                                "type": "main",
+                                "color": "#AC90D2",
+                                "entity": "people",
+                                "status": "draft",
+                                "first_name": "Davide",
+                                "family_name": "Mezzet",
+                                "is_favorite": true,
+                                "is_internal": true,
+                                "natural_key": "",
+                                "email_address": "mezzettidavide@notifyme.org",
+                                "photo_content": ""
+                            },
+                            "created_at": "2020-05-11T15:24:46.31974+00:00",
+                            "updated_at": "2020-05-11T15:28:07.370421+00:00",
+                            "cancelled_at": null
+                        },
+                        "aspects": {
+                            "role": "member",
+                            "junction": "people_company",
+                            "has_created": true,
+                            "is_favourite": true,
+                            "source_entity": "company",
+                            "target_entity": "people"
+                        }
+                    }
+                ]
+            }
+        ],
+        "limit": 10,
+        "offset": 0,
+        "total_count": 1
+    }
+}
